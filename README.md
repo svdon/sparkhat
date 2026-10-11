@@ -1,0 +1,3 @@
+# Sparkhat
+
+Website for Sparkhat.

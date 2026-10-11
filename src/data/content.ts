@@ -1,13 +1,33 @@
-/** Client logos pulled from sparkhat.com */
-export const CLIENT_LOGOS = [
-  { name: 'Go City', src: '/assets/clients/gocity.png' },
-  { name: 'Seniorly', src: '/assets/clients/seniorly.png' },
-  { name: 'Anchor', src: '/assets/clients/anchor.png' },
-  { name: 'Naylam', src: '/assets/clients/naylam.png' },
-  { name: 'NotCo', src: '/assets/clients/notco.png' },
-  { name: 'Chuker', src: '/assets/clients/chuker.png' },
-  { name: 'Socialbooster', src: '/assets/clients/socialbooster.png' },
-  { name: 'Confirm Biosciences', src: '/assets/clients/confirm-biosciences.png' },
+import logoGocity from '../assets/clients/gocity.png'
+import logoSeniorly from '../assets/clients/seniorly.png'
+import logoAnchor from '../assets/clients/anchor.png'
+import logoCaseplume from '../assets/clients/caseplume.png'
+import logoNotco from '../assets/clients/notco.png'
+import logoChuker from '../assets/clients/chuker.png'
+import logoSocialbooster from '../assets/clients/socialbooster.png'
+import logoConfirm from '../assets/clients/confirm-biosciences.png'
+import logoNufund from '../assets/clients/nufund.png'
+
+export type ClientLogo = {
+  name: string
+  src: string
+  /** CSS mix-blend-mode; default multiply for logos with black baked in */
+  blend?: 'multiply' | 'normal'
+  /** Max logo height in the cell; default 56 */
+  maxHeight?: number
+}
+
+/** Client logos — sparkhat.com set + CasePlume + NuFund */
+export const CLIENT_LOGOS: ClientLogo[] = [
+  { name: 'Go City', src: logoGocity },
+  { name: 'Seniorly', src: logoSeniorly },
+  { name: 'Anchor', src: logoAnchor },
+  { name: 'CasePlume', src: logoCaseplume, blend: 'normal', maxHeight: 64 },
+  { name: 'NotCo', src: logoNotco },
+  { name: 'Chuker', src: logoChuker },
+  { name: 'Socialbooster', src: logoSocialbooster },
+  { name: 'Confirm Biosciences', src: logoConfirm, maxHeight: 78 },
+  { name: 'NuFund', src: logoNufund, blend: 'multiply', maxHeight: 70 },
 ]
 
 /** Full testimonials from sparkhat.com */

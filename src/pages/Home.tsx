@@ -207,12 +207,12 @@ export function Home() {
             <div
               key={logo.name}
               style={{
-                height: 96,
+                height: 108,
                 background: '#B8E4F7',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '18px 22px',
+                padding: '16px 20px',
               }}
             >
               <img
@@ -220,11 +220,11 @@ export function Home() {
                 alt={logo.name}
                 style={{
                   maxWidth: '100%',
-                  maxHeight: 56,
+                  maxHeight: logo.maxHeight ?? 56,
                   width: 'auto',
                   height: 'auto',
                   objectFit: 'contain',
-                  mixBlendMode: 'multiply',
+                  mixBlendMode: logo.blend ?? 'multiply',
                 }}
               />
             </div>

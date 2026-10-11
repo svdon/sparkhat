@@ -16,9 +16,9 @@ export function SiteNav() {
       <div className="site-nav-inner">
         <Link to="/" style={{ display: 'flex' }}>
           <img
-            src="/assets/sparkhat-logo.png"
+            src="/assets/sparkhat-logo-dark-bg.png"
             alt="SparkHat"
-            style={{ height: 64, display: 'block' }}
+            style={{ height: 40, display: 'block' }}
           />
         </Link>
         <nav className="site-nav-links">

@@ -42,9 +42,9 @@ export function SiteFooter({ showCta = true }: { showCta?: boolean }) {
       <div className="footer-grid">
         <div>
           <img
-            src="/assets/sparkhat-logo.png"
+            src="/assets/sparkhat-logo-dark-bg.png"
             alt="SparkHat"
-            style={{ height: 84 }}
+            style={{ height: 48 }}
           />
           <p
             style={{

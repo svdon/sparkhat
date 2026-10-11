@@ -44,7 +44,7 @@ export function SiteFooter({ showCta = true }: { showCta?: boolean }) {
           <img
             src="/assets/sparkhat-logo-dark-bg.png"
             alt="SparkHat"
-            style={{ height: 48 }}
+            style={{ height: 64, width: 'auto' }}
           />
           <p
             style={{

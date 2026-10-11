@@ -18,7 +18,7 @@ export function SiteNav() {
           <img
             src="/assets/sparkhat-logo-dark-bg.png"
             alt="SparkHat"
-            style={{ height: 40, display: 'block' }}
+            style={{ height: 56, display: 'block', width: 'auto' }}
           />
         </Link>
         <nav className="site-nav-links">

@@ -19,6 +19,9 @@ const PERKS = [
   'A plan you approve before anything ships',
 ]
 
+const FORM_ENDPOINT =
+  'https://formsubmit.co/ajax/sumant.v@sparkhat.com'
+
 export function Contact() {
   const [params] = useSearchParams()
   const [name, setName] = useState('')
@@ -29,6 +32,8 @@ export function Contact() {
   const [budget, setBudget] = useState<string | null>(null)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [sending, setSending] = useState(false)
 
   useEffect(() => {
     const idea = params.get('idea')
@@ -44,13 +49,68 @@ export function Contact() {
     )
   }
 
-  const send = () => {
+  const send = async () => {
     if (!name.trim() || !/\S+@\S+\.\S+/.test(email)) {
       setError(true)
+      setSubmitError('')
       return
     }
-    setSent(true)
+
     setError(false)
+    setSubmitError('')
+    setSending(true)
+
+    const body = {
+      name: name.trim(),
+      email: email.trim(),
+      website: website.trim() || '—',
+      interested_in: picked.length ? picked.join(', ') : '—',
+      monthly_budget: budget || '—',
+      message: message.trim() || '—',
+      _subject: `SparkHat strategy call — ${name.trim()}`,
+      _replyto: email.trim(),
+      _template: 'table',
+      _captcha: 'false',
+    }
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(body),
+      })
+      const data = (await res.json().catch(() => null)) as {
+        success?: string | boolean
+        message?: string
+      } | null
+
+      const ok =
+        res.ok &&
+        (data?.success === true ||
+          data?.success === 'true' ||
+          String(data?.message || '')
+            .toLowerCase()
+            .includes('success'))
+
+      if (!ok) {
+        throw new Error(
+          data?.message || 'Could not send — try again in a moment.',
+        )
+      }
+
+      setSent(true)
+    } catch (e) {
+      setSubmitError(
+        e instanceof Error
+          ? e.message
+          : 'Could not send — try again in a moment.',
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   const firstName = name.split(' ')[0] || 'there'
@@ -139,14 +199,19 @@ export function Contact() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Jane Doe"
+                  autoComplete="name"
+                  disabled={sending}
                 />
               </label>
               <label className="field">
                 work_email*
                 <input
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="jane@company.com"
+                  autoComplete="email"
+                  disabled={sending}
                 />
               </label>
             </div>
@@ -156,6 +221,8 @@ export function Contact() {
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
                 placeholder="company.com"
+                autoComplete="url"
+                disabled={sending}
               />
             </label>
             <div>
@@ -169,6 +236,7 @@ export function Contact() {
                     type="button"
                     className={`chip${picked.includes(label) ? ' on' : ''}`}
                     onClick={() => toggle(label)}
+                    disabled={sending}
                   >
                     {label}
                   </button>
@@ -194,6 +262,7 @@ export function Contact() {
                     className={`chip${budget === label ? ' on' : ''}`}
                     style={{ textAlign: 'center', padding: 10 }}
                     onClick={() => setBudget(label)}
+                    disabled={sending}
                   >
                     {label}
                   </button>
@@ -207,6 +276,7 @@ export function Contact() {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="What are you trying to grow or build?"
                 rows={4}
+                disabled={sending}
               />
             </label>
             {error && (
@@ -214,8 +284,19 @@ export function Contact() {
                 ! error: name and a valid work email are required
               </div>
             )}
-            <button type="button" className="btn btn-primary" onClick={send}>
-              Book my call →
+            {submitError && (
+              <div style={{ fontSize: 13, color: '#F2A08C' }}>
+                ! error: {submitError}
+              </div>
+            )}
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => void send()}
+              disabled={sending}
+              style={{ opacity: sending ? 0.7 : 1 }}
+            >
+              {sending ? 'Sending…' : 'Book my call →'}
             </button>
           </div>
         ) : (

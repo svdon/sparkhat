@@ -199,35 +199,32 @@ export function Home() {
             gridTemplateColumns:
               'repeat(auto-fit, minmax(min(100%, max(140px, calc((100% - 1px) / 4))), 1fr))',
             gap: 1,
-            background: 'rgba(var(--a-rgb), .25)',
-            border: '1px solid rgba(var(--a-rgb), .25)',
+            background: 'rgba(var(--a-rgb), .35)',
+            border: '1px solid rgba(var(--a-rgb), .35)',
           }}
         >
-          {CLIENT_LOGOS.map((src) => (
+          {CLIENT_LOGOS.map((logo) => (
             <div
-              key={src}
+              key={logo.name}
               style={{
-                height: 84,
-                background: '#DDE5E9',
+                height: 96,
+                background: '#B8E4F7',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: 18,
+                padding: '18px 22px',
               }}
             >
-              <div
-                role="img"
-                aria-label="Client logo"
+              <img
+                src={logo.src}
+                alt={logo.name}
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  backgroundImage: `url(${src})`,
-                  backgroundSize: 'contain',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  filter: 'grayscale(1)',
+                  maxWidth: '100%',
+                  maxHeight: 56,
+                  width: 'auto',
+                  height: 'auto',
+                  objectFit: 'contain',
                   mixBlendMode: 'multiply',
-                  opacity: 0.85,
                 }}
               />
             </div>

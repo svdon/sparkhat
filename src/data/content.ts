@@ -1,15 +1,14 @@
-const CDN = 'https://d1yei2z3i6k35z.cloudfront.net/3044363/'
-
+/** Client logos pulled from sparkhat.com */
 export const CLIENT_LOGOS = [
-  '64fd04d04d017_gocitylogo.png',
-  '64fd04eb5f417_1a33ba2a-eaf4-479a-aa82-bdc3b63fc7fd.png',
-  '64fd090864ee9_anchor_logo-removebg-preview.png',
-  '64fd0917d540b_naylam_logo-removebg-preview.png',
-  '65934e7b489a1_notco-logo-B1B850110C-seeklogo.com.png',
-  '64fdb036f11b8_chkver_logo-removebg-preview.png',
-  '64fdb0cd5a5a7_social_booster-removebg-preview.png',
-  '64fdb116130df_CB.png',
-].map((f) => CDN + f)
+  { name: 'Go City', src: '/assets/clients/gocity.png' },
+  { name: 'Seniorly', src: '/assets/clients/seniorly.png' },
+  { name: 'Anchor', src: '/assets/clients/anchor.png' },
+  { name: 'Naylam', src: '/assets/clients/naylam.png' },
+  { name: 'NotCo', src: '/assets/clients/notco.png' },
+  { name: 'Chuker', src: '/assets/clients/chuker.png' },
+  { name: 'Socialbooster', src: '/assets/clients/socialbooster.png' },
+  { name: 'Confirm Biosciences', src: '/assets/clients/confirm-biosciences.png' },
+]
 
 /** Full testimonials from sparkhat.com */
 export const TESTIMONIALS = [

@@ -72,18 +72,19 @@ export function Home() {
         <div>
           <div className="type-line">&gt; sparkhat --mode=growth</div>
           <h1 className="display display-xl" style={{ marginTop: 20 }}>
-            Marketing that grows you.
+            Marketing that grows your business.
             <br />
-            <span style={{ color: 'var(--b)' }}>Sites and tools we build.</span>
+            <span style={{ color: 'var(--b)' }}>
+              Sites and tools built to perform.
+            </span>
             <span
               className="cursor-blink"
               style={{ background: 'var(--b)' }}
             />
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: 540 }}>
-            SEO, AI search, and paid ads to get customers in the door — plus
-            custom websites, calculators, dashboards, and software so that
-            traffic actually converts. One team for growth and the build.
+            SEO, AI search, paid ads, websites, calculators, dashboards, and
+            custom software. One team covering the marketing and the build.
           </p>
           <div
             style={{

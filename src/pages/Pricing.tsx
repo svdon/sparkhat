@@ -27,8 +27,8 @@ export function Pricing() {
               Clear <span style={{ color: 'var(--c)' }}>pricing</span>
             </h1>
             <p className="lead" style={{ marginTop: 12, maxWidth: 520, fontSize: 15 }}>
-              Monthly plans for growth, fixed-price projects for builds. Every
-              engagement starts with a free audit.
+              Monthly plans for growth, fixed-price projects for builds. We
+              scope every engagement before anything ships.
             </p>
           </div>
           <div

@@ -72,16 +72,18 @@ export function Home() {
         <div>
           <div className="type-line">&gt; sparkhat --mode=growth</div>
           <h1 className="display display-xl" style={{ marginTop: 20 }}>
-            Get found. Get clicked.
+            Marketing that grows you.
             <br />
-            <span style={{ color: 'var(--a)' }}>Get built.</span>
-            <span className="cursor-blink" />
+            <span style={{ color: 'var(--b)' }}>Sites and tools we build.</span>
+            <span
+              className="cursor-blink"
+              style={{ background: 'var(--b)' }}
+            />
           </h1>
-          <p className="lead" style={{ marginTop: 22, maxWidth: 520 }}>
-            A growth agency for mid-size and enterprise brands. We get you
-            ranking on Google and recommended in AI search — traffic that
-            converts into closed business. Then we scale your Google and Meta
-            ads and build the websites and tools that turn it into revenue.
+          <p className="lead" style={{ marginTop: 22, maxWidth: 540 }}>
+            SEO, AI search, and paid ads to get customers in the door — plus
+            custom websites, calculators, dashboards, and software so that
+            traffic actually converts. One team for growth and the build.
           </p>
           <div
             style={{
@@ -92,10 +94,10 @@ export function Home() {
             }}
           >
             <Link to="/contact" className="btn btn-primary">
-              Book a free audit →
+              Talk to us →
             </Link>
             <Link to="/build" className="btn btn-ghost">
-              Pitch a tool idea
+              Pitch a build idea →
             </Link>
           </div>
           <div
@@ -478,17 +480,18 @@ export function Home() {
             gap: 32,
             alignItems: 'center',
             padding: 'clamp(28px, 4vw, 48px)',
-            background: 'var(--a)',
-            color: '#070A0C',
+            background: 'linear-gradient(135deg, #1c1914 0%, #2a2318 50%, #15201c 100%)',
+            border: '1px solid rgba(var(--b-rgb), .35)',
+            color: 'var(--hi)',
           }}
         >
           <div>
-            <div style={{ fontSize: 12, color: '#070A0C', opacity: 0.7 }}>
+            <div style={{ fontSize: 12, color: 'var(--b)' }}>
               [04] BUILD STUDIO
             </div>
             <h2
               className="display display-md"
-              style={{ marginTop: 10, color: '#070A0C' }}
+              style={{ marginTop: 10, color: 'var(--hi)' }}
             >
               Have an idea? We&apos;ll build it.
             </h2>
@@ -498,7 +501,7 @@ export function Home() {
                 maxWidth: 480,
                 fontSize: 15,
                 lineHeight: 1.7,
-                color: '#16232A',
+                color: 'var(--muted)',
               }}
             >
               Custom websites, calculators, dashboards, client portals and
@@ -520,6 +523,7 @@ export function Home() {
                 background: 'var(--bg)',
                 fontSize: 14,
                 color: 'var(--fg)',
+                border: '1px solid rgba(var(--b-rgb), .25)',
               }}
             >
               &gt; {IDEA_EXAMPLES[idea]}
@@ -529,13 +533,13 @@ export function Home() {
                   width: 8,
                   height: 15,
                   marginLeft: 4,
-                  background: 'var(--a)',
+                  background: 'var(--b)',
                   verticalAlign: -2,
                   animation: 'tb-blink 1s step-end infinite',
                 }}
               />
             </div>
-            <Link to="/build" className="btn btn-dark" style={{ padding: '14px 22px' }}>
+            <Link to="/build" className="btn btn-primary" style={{ padding: '14px 22px' }}>
               Pitch your idea →
             </Link>
           </div>

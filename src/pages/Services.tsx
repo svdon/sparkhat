@@ -153,7 +153,7 @@ export function Services() {
                       fontSize: 13,
                     }}
                   >
-                    {s.id === 'build' ? 'Pitch your idea' : 'Get a free audit'} →
+                    {s.id === 'build' ? 'Pitch your idea' : 'Talk to us'} →
                   </Link>
                 </div>
                 <div>

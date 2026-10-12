@@ -10,31 +10,31 @@ export function SiteFooter({ showCta = true }: { showCta?: boolean }) {
               <div
                 style={{
                   font: "400 13px 'IBM Plex Mono', monospace",
-                  color: '#16232A',
+                  color: 'var(--b)',
                 }}
               >
                 &gt; next_step
               </div>
               <h2
                 className="display display-md"
-                style={{ margin: '12px 0 0', color: '#070A0C' }}
+                style={{ margin: '12px 0 0', color: 'var(--hi)' }}
               >
-                Get a free growth audit
+                Ready to grow — or build?
               </h2>
               <p
                 style={{
                   margin: '12px 0 0',
                   maxWidth: 520,
                   font: "400 15px/1.7 'IBM Plex Mono', monospace",
-                  color: '#16232A',
+                  color: 'var(--muted)',
                 }}
               >
-                30 minutes with a senior strategist. We review your search
-                rankings, ad accounts and website live on the call.
+                30 minutes with a senior strategist. Tell us what you need —
+                marketing, a custom build, or both.
               </p>
             </div>
-            <Link to="/contact" className="btn btn-dark">
-              Book a call →
+            <Link to="/contact" className="btn btn-primary">
+              Talk to us →
             </Link>
           </div>
         </div>

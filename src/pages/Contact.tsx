@@ -14,7 +14,7 @@ const INTERESTS = [
 const BUDGETS = ['< $5k', '$5–15k', '$15–50k', '$50k+']
 
 const PERKS = [
-  'Free audit of your rankings, ads and website',
+  'Clear next steps for search, ads, or a custom build',
   'A dedicated account manager from day one',
   'A plan you approve before anything ships',
 ]
@@ -129,7 +129,7 @@ export function Contact() {
       <div>
         <div className="type-line">&gt; sparkhat book --call</div>
         <h1 className="display display-lg" style={{ marginTop: 16 }}>
-          Book a free
+          Book a
           <br />
           <span style={{ color: 'var(--b)' }}>strategy call</span>
         </h1>
